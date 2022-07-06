@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <script>
+        console.log('arrays')
+        fruits=['Apple','Guava','Mango']
+        console.log(fruits)
+        console.log('Add new element to the array')
+        fruits.push("Jack Fruit")
+        console.log(fruits)
+        console.log('Update an element in the array')
+        fruits[0]="Pine apple"
+        console.log(fruits)
+        console.log('Delete an element in the array')
+        fruits.pop()
+        console.log(fruits)
+        console.log('Length ' +fruits.length)
+        console.log('unshift ')
+        fruits.unshift('Banana')
+        console.log(fruits)
+        console.log('shift ')
+        fruits.shift()
+        console.log(fruits)
+
+        for (i=0;i<fruits.length;i++){
+            console.log(fruits[i])
+        }
+        console.log('sort in ascending order')
+        fruits.sort()
+        console.log(fruits)
+
+        console.log('sort in descending order')
+        fruits.reverse()
+        console.log(fruits)    
+   </script>
+</body>
+</html>

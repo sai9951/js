@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <h1>Arrow Functions</h1>
+
+    <script>
+        function greet(){
+            console.log('Welcome to javascript')
+        }
+
+        greet()
+
+        // Arrow function
+
+        greetaf=() =>{
+            console.log('welcome to arrow function')
+        }
+
+        greetaf()
+
+        function add(n1,n2){
+            return n1+n2
+        }
+
+        result = add(10,20)
+        console.log('result of add regular function '+result)
+
+       addaf=(n1,n2)=>n1+n2
+       result = addaf(10,20) 
+       console.log('result of arrow  function  add '+result)
+
+       function si(p,r,t){
+        return (p*r*t/100)
+       }
+
+       result = si(1000,4,1)
+       console.log("Simple Interest regular function "+result)
+
+       siaf = (p,r,t)=>(p*r*t)/100
+
+       result =siaf(1000,4,1)
+       console.log("Simple Interest arrow function "+result)
+    </script>
+    
+</body>
+</html>

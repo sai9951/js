@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+
+    <h1>Functions</h1>
+
+    <script>
+        function greet(){
+            console.log('Welcome to javascript')
+        }
+
+       greet()
+
+       function greet(name){
+            console.log(name + ' Welcome to javascript ')
+        }
+
+       greet("ravi")
+       greet("ranjani")
+
+
+       function add(n1,n2){
+        result = n1+n2
+        console.log(result)
+       }
+
+       add(100,150)
+
+
+       function multiply(n1,n2){
+            return n1*n2
+       }
+
+       result = multiply(10,15)
+       console.log("result of multiplication is "+result)
+
+       function simpleInterest(p,roi,t){
+        return (p*roi*t)/100
+       }
+
+       si = simpleInterest(10000,4,1)
+       console.log("simple interest is "+si)
+
+
+       function evenOrOdd(num){
+        if (num%2 ==0)
+            console.log(num + " is even")
+        else
+            console.log(num + " is odd")
+       }
+       
+       evenOrOdd(15)
+       evenOrOdd(18)
+       /**
+        *  display grade based on marks
+        * marks >90 <=100 - A+
+        * marks >80 <=90 - A
+        * 
+        * */
+
+        function displayGrade(marks){
+            grade = ""
+            if (marks >90 && marks <=100){
+                grade = "A+"
+            }else if (marks >80 && marks <=90)
+            {
+                grade = "A"
+            }else if (marks >70 && marks <=80)
+            {
+                grade = "B+"
+            }
+            else if (marks >60 && marks <=70)
+            {
+                grade = "B"
+            }else{
+                grade ="Less than B"
+            }
+
+            return grade
+        }
+
+        grade = displayGrade(91)
+        console.log("your grade is "+grade)
+        grade = displayGrade(85)
+        console.log("your grade is "+grade)   
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+        #bg-container{
+            background-color:#f9fbfe;
+            height:100vh;
+            width: 100vw;
+            
+        }
+        #masterproduct{
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+        input{
+            background-color: white;
+            
+            border-style: solid;
+            border-width: 1px;
+            border-color: #e4e7eb;
+            border-radius: 10px;
+            margin-top: 10px;
+            padding: 15px;
+            
+        }
+        label{
+            font-family: "roboto";
+            font-weight: bold;
+            font-size: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div  id="bg-container">
+        <h1 id="masterproduct">Master Product</h1>
+        <div class="container text-center">
+            <div class="row">
+
+            
+                <div class="form-group ">
+                <div class="d-flex  flex-row">
+                    <label class="col-7 ">Product code : </label>
+                    <input class="col-5" type="text" id="code"  >
+                </div>
+                <div class="d-flex flex-row ">
+                    <label class="col-7" >Product Name : </label>
+                    <input class="col-5" type="text" id="name" >
+                </div>
+                <div class="d-flex flex-row ">
+                    <label class="col-7">Product Discription : </label>
+                    <input class="col-5" type="text" id="discription" >
+                </div>
+                <div  class="d-flex flex-row ">
+                    <label class="col-7">Product Manufacture :</label>
+                    <input class="col-5" type="text" id="manufacture" >
+                </div >
+                <div class="d-flex flex-row ">
+                    <label class="col-7" >Product Price : </label>
+                    <input class="col-5" type="number" id="price" >
+                </div>
+            
+            </div>
+            
+        </div>
+        <div class="p-5">
+            <button class="btn btn-primary mr-5" onclick="addproduct()">Add product</button>
+            <button class="btn btn-secondary ml-5" onclick="viewdata()">View product</button>
+        </div>
+        
+        <div id="result">
+            <table class="table" id="view">
+        
+            </table>
+        </div>
+    </div>
+    
+</div>
+
+
+<script>
+            productmaster =[]
+            function product(code,name,description,manufacturer,price){
+            this.code = code;
+            this.name = name;
+            this.description = description;
+            this.manufacturer = manufacturer;
+            this.price = price;
+        }
+
+        function addproduct(){
+            console.log("addproduct")
+            code=document.getElementById("code").value
+            name=document.getElementById("name").value
+            description=document.getElementById("discription").value
+            manufacturer=document.getElementById("manufacture").value
+            price=document.getElementById("price" ).value
+           
+            item= new product(code,name,description,manufacturer,price) 
+            productmaster.push(item)
+            console.log(productmaster)
+            clearData()
+        }
+        function clearData(){
+            document.getElementById("code").value=""
+            document.getElementById("name").value=""
+            document.getElementById("discription").value=""
+            document.getElementById("manufacture").value=""
+            document.getElementById("price" ).value=""
+     
+        }
+        function viewdata(){
+            data =`<tr><th>Code</th><th>Name</th><th>Description</th><th>Manufacturer</th><th>Price</th></tr>`
+            for (let eachitem of productmaster){
+                player=eachitem;
+                console.log(player)
+                data+=`<tr><th>${eachitem.code}</th><th>${eachitem.name}</th><th>${eachitem.description}</th><th>${eachitem.manufacturer}</th><th>${eachitem.price}</th></tr>`
+            }
+
+            document.getElementById("view").innerHTML=data
+        }
+
+</script>  
+</body>
+
+</html>
